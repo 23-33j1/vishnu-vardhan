@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Registration Form</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url('https://images.unsplash.com/photo-1566501206186-28f3fdb9fd4d'); /* ✅ Train image URL */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #333;
+    }
+
+    /* Add a semi-transparent overlay to improve readability */
+    main, header, footer {
+      background-color: rgba(255, 255, 255, 0.92);
+    }
+
+    header {
+      padding: 20px 30px;
+      text-align: center;
+      background-color: rgba(0, 86, 179, 0.95);
+      color: white;
+    }
+
+    nav {
+      background-color: rgba(0, 61, 128, 0.95);
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 12px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffcc00;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #0056b3;
+    }
+
+    footer {
+      text-align: center;
+      background-color: rgba(0, 51, 102, 0.95);
+      color: white;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      main {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Institutional Research & Training Development (IRD/TD)</h1>
+  <p>Empowering Innovation | Enabling Skill Growth</p>
+</header>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Projects</a>
+  <a href="#">Training</a>
+  <a href="#">Contact</a>
+</nav>
+
+<main>
+  <section>
+    <h2>About IRD/TD</h2>
+    <p>The IRD/TD department is the hub for fostering innovation, research, and advanced technical training at our institution. Our mission is to bridge the gap between academia and industry through collaborative projects, professional development, and hands-on training programs.</p>
+  </section>
+
+  <section>
+    <h2>Objectives</h2>
+    <ul>
+      <li>Promote interdisciplinary research across departments.</li>
+      <li>Collaborate with industries and research bodies.</li>
+      <li>Offer training programs to enhance student and staff skills.</li>
+      <li>Support innovation and entrepreneurship initiatives.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Ongoing Projects</h2>
+    <ul>
+      <li>AI-Powered Agriculture Monitoring System</li>
+      <li>Smart City Waste Management Solutions</li>
+      <li>IoT-based Health Monitoring Devices</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Training & Workshops</h2>
+    <p>We conduct regular training sessions and workshops on trending technologies such as:</p>
+    <ul>
+      <li>Machine Learning & Data Science</li>
+      <li>Cybersecurity Fundamentals</li>
+      <li>Web Development Bootcamps</li>
+      <li>Startup and Innovation Challenges</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Contact Us</h2>
+    <p>
+      IRD/TD Office<br />
+      XYZ Institute of Technology<br />
+      Email: irdtd@xyz.edu<br />
+      Phone: +91-9876543210
+    </p>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 IRD/TD Department | XYZ Institute of Technology
+</footer>
+
+</body>
+</html>

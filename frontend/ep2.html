@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Student Registration Form</title>
+<style>
+  /* Reset & base */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+  }
+
+  /* HEADER & NAVIGATION */
+  header {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 30px;
+  }
+  .header-container {  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+  nav {
+    display: flex;
+    gap: 25px;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  nav a:hover,
+  nav a:focus {
+    background-color: rgba(255,255,255,0.2);
+  }
+
+  /* MOBILE HEADER NAV STACK */
+  @media (max-width: 600px) {
+    .header-container {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+    nav {
+      flex-direction: column;
+      width: 100%;
+    }
+    nav a {
+      padding: 10px;
+      width: 100%;
+    }
+  }
+
+  /* FORM CONTAINER */
+  main {
+    max-width: 600px;
+    margin: 40px auto 60px;
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 18px rgba(0,0,0,0.1);
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 18px 25px;
+  }
+  form label {
+    align-self: center;
+    font-weight: 600;
+  }
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"],
+  form select {
+    padding: 9px 12px;
+    font-size: 1rem;
+    border: 1.8px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+  }
+  form input[type="text"]:focus,
+  form input[type="email"]:focus,
+  form input[type="password"]:focus,
+  form select:focus {
+    border-color: #007BFF;
+    outline: none;
+  }
+
+  /* Gender group spans 2 columns & uses flex */
+  .gender-group {
+    grid-column: span 2;
+    display: flex;
+    gap: 30px;
+  }
+  .gender-group label {
+    font-weight: normal;
+  }
+  .gender-group input[type="radio"] {
+    margin-right: 6px;
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+
+  /* Button spans 2 columns */
+  button {
+    grid-column: span 2;
+    background-color: #2be679;
+    color: rgb(70, 160, 110);
+    border: none;
+    padding: 14px 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  button:hover,
+  button:focus {
+    background-color: #418dac;
+    outline: none;
+  }
+
+  /* STACK FORM ON MOBILE */
+  @media (max-width: 600px) {
+    form {
+      grid-template-columns: 1fr;
+    }
+    .gender-group {
+      flex-direction: column;
+      gap: 12px;
+    }
+    button {
+      grid-column: span 1;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="logo">Student Registration Form</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Courses</a>
+      <a href="#">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <form action="#" method="POST" novalidate>
+    <label for="fullname">Full Name</label>
+    <input type="text" id="fullname" name="fullname" placeholder="Your full name" required />
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+    <label for="course">Course Selection</label>
+    <select id="course" name="course" required>
+      <option value="" disabled selected>Select a course</option>
+      <option value="webdev">Web Development</option>
+      <option value="datasci">Data Science</option>
+      <option value="design">Graphic Design</option>
+    </select>
+
+    <label>Gender</label>
+    <div class="gender-group">
+      <label><input type="radio" name="gender" value="male" required /> Male</label>
+      <label><input type="radio" name="gender" value="female" /> Female</label>
+    </div>
+    
+<label>Hobbies</label>
+    <div class="hobbies-group">
+      <label><input type="checkbox" name="hobbies" value="reading" /> Reading</label>
+      <label><input type="checkbox" name="hobbies" value="traveling" /> Traveling</label>
+      <label><input type="checkbox" name="hobbies" value="music" /> Music</label>
+      <label><input type="checkbox" name="hobbies" value="sports" /> Sports</label>
+      <label><input type="checkbox" name="hobbies" value="gaming" /> Gaming</label>
+    </div>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" placeholder="Enter password" required />
+
+    <label for="confirm-password">Confirm Password</label>
+    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm password" required />
+
+    <button type="submit">Register</button>
+  </form>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Travel Pay Calculator</title>
+</head>
+<body>
+  <h1>Travel Pay Calculator</h1>
+  
+  <label for="travel">Enter travel distance (miles): </label>
+  <input type="number" id="travel" step="0.1" value="19.5" />
+  
+  <button onclick="calculatePay()">Calculate Pay</button>
+  
+  <p id="result"></p>
+  
+  <script>
+    function calculatePay() {
+      let pay = 30;
+      let travel = parseFloat(document.getElementById('travel').value);
+      
+      if (travel < 5) {
+        pay = 30;
+      } else if (travel > 4 && travel <= 5) {
+        let extra = travel - 4;
+        pay = pay + extra * 10;
+      } else if (travel > 5 && travel <= 10) {
+        let extra = travel - 4;
+        pay = pay + extra * 15;
+      } else if (travel > 10) {
+        let extra = travel - 4;
+        pay = pay + extra * 20;
+      } else {
+        document.getElementById('result').textContent = "You are not travelling";
+        return;
+      }
+      
+      document.getElementById('result').textContent = `Pay: $${pay.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>
