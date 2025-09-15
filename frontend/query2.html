@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To do List</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+        background-color: #7dd6cb;
+    }
+    h2 {
+        color: #5c7b18;
+    }
+    .complete-btn {
+        margin-left: 10px;
+        background-color: #5c7b18;
+        color: white;
+        border: none;
+        padding: 3px 8px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .complete-btn:disabled {
+        background-color: #b5b5b5;
+        cursor: not-allowed;
+    }
+    .task-text {
+        cursor: pointer;
+    }
+    .completed {
+        background-color: yellow;
+        text-decoration: line-through;
+    }
+    .delete-btn {
+        margin-left: 5px;
+        background-color: #d9534f;
+        color: white;
+        border: none;
+        padding: 3px 8px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+    <h2>To-Do-Task</h2>
+    <br><br>
+    <h3>Tasks :-</h3>
+    <input type="text" id="taskInput" placeholder="Enter a new task">
+    <button id="addTaskBtn">Add Task</button>
+    <ul id="tasks"></ul>
+
+    <script>
+    $(document).ready(function(){
+        // Add Task
+        $("#addTaskBtn").on("click", function() {
+            let taskText = $("#taskInput").val().trim();
+            if(taskText !== "") {
+                $("#tasks").append(
+                    `<li>
+                        <span class="task-text">${taskText}</span>
+                        <button class="complete-btn">Complete</button>
+                        <button class="delete-btn">Delete</button>
+                    </li>`
+                );
+                $("#taskInput").val("");
+            } else {
+                alert("Please enter a task!");
+            }
+        });
+
+        // Remove task on clicking the delete button
+        $("#tasks").on("click", ".delete-btn", function(e) {
+            e.stopPropagation();
+            $(this).parent().remove();
+        });
+
+        // Remove task on clicking the task text
+        $("#tasks").on("click", "li .task-text", function() {
+            $(this).parent().remove();
+        });
+
+        // Mark task as complete and highlight
+        $("#tasks").on("click", ".complete-btn", function(e) {
+            e.stopPropagation();
+            $(this).siblings('.task-text').addClass("completed");
+            $(this).prop("disabled", true);
+        });
+    });
+    </script>
+</body>
+</html>
